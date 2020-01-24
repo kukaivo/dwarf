@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dwarf project</title>
+</head>
+<body>
+	<h1>Dwarf project</h1>
+	<hr>
+
+	<div id="demo"></div>
+
+	<div id="oldestDewarf"></div>
+
+	<script>
+	
+	//OBJECT
+	//CONTRUCTOR
+	function Dwarfs(name, image) {
+	
+		this.name = name;
+		this.age = Math.floor(Math.random()*100);
+		this.image = image;
+
+	}
+	//DECLARE AN EMPTY ARRAY THEN WRITE THEM
+	var Dwarf = [];
+	//INSTANCE's
+	Dwarf[0] = new Dwarfs("harry", "img/Dwarf1.jpg");
+	Dwarf[1] = new Dwarfs("Sam", "img/Dwarf2.jpg");
+	Dwarf[2] = new Dwarfs("Jay", "img/Dwarf3.jpg");
+
+
+
+	// LOOP THROUGH DWARFS
+
+	for(var i = 0; i < Dwarf.length; i++) {
+		document.getElementById('demo').innerHTML += Dwarf[i].name+" "+
+		Dwarf[i].age+"<img src='  "+Dwarf[i].image+" ' >";
+
+	}
+var oldestDwarf;
+	for(var i = 0; i < Dwarfs.length; i++) {
+if (oldestDwarf == null) {
+	oldestDwarf = Dwarf[i];
+
+}	else if (oldestDwarf.age < Dwarf[i].age) {
+	oldestDwarf = Dwarf[i];
+
+}
+
+	}
+	document.getElementById('oldestDewarf').innerHTML = oldestDwarf.name;
+	
+
+	
+	</script>
+
+
+	
+</body>
+</html>
